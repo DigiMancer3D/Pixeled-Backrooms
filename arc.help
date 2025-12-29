@@ -1,0 +1,46 @@
+Placeholder for Arc Help
+
+Arc Creation Basics:
+
+New Arc: Click "New Arc" to start a fresh arc.
+  -  Arc Name: Enter a title (max 18 characters).
+  -  Estimated Type: Select from "2-Finish (E2F)", "2-Start (E2S)", "Short-Hold-Time (SHT)", "Long-Hold-Time (LHT)".
+  -  Estimated Parts: Enter numeric values separated by colons (e.g., 3:2:3 for E2F; lengths match type).
+  -  Zone Type: Choose from Safe, Crawl, Fight, Mix0, Mix1, Mix2, Mix3, Mixed.
+  -  Start Msg: Initial message or lore (max 150 characters).
+  -  Map: Specify map ID or name.
+  -  Map Type: Import (use existing map) or Generate (create on-the-fly).
+  -  Arc Data: Main script area; use Arc Data Guide for syntax.
+  -  Confirm Msg: Completion or exit message (max 150 characters).
+
+Editing Arcs:
+  -  Select Arc: Click on arc in list to load fields.
+  -  Modify Fields: Edit any field; changes auto-save to memory on focus out.
+  -  Undo/Redo Arc: Revert or reapply changes to arc fields and data.
+  -  Delete Arc: Remove selected arc (use Undo Arc Delete from Edit menu to recover).
+  -  Attach to Map: Link arc to current map tab.
+  -  Save Arc: Save individual arc to .arcs file.
+  -  Load Arc: Load .arcs file into fields (overwrite current).
+  -  Load Arc to Map: Load and attach to current map.
+  -  Save Selected Arc: Export current arc.
+  -  Save All from Map: Export attached arcs on current map.
+  -  Save All from Dict: Export all arcs including attached ones.
+
+Script Generator:
+  -  Select Type: Enemy, Boss, Mini-Boss, NPC, Group, Map Location.
+  -  Fill Fields: Enter details like name, rates, colors, etc.
+  -  Pick Location: For Map Location, click on canvas to select XY and object.
+  -  Inject: Insert formatted string into Arc Data.
+
+Data Phrases:
+  -  Click buttons to insert common phrases like "exit", "kill", "user", etc., into Arc Data.
+
+Arc Options:
+  -  Save Arc: Commit changes to list.
+  -  Load Arc: Load from file.
+  -  Attach to Current Map: Add to map's attached arcs (shown as green dots).
+  -  Undo/Redo Arc: For current arc edits.
+  -  Remove All Edits: Clear fields to defaults.
+
+!See arc.guide for arc data syntax and examples!
+!Arcs integrate with maps via attachments and map references!

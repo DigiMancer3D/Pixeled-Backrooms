@@ -1,0 +1,37 @@
+TLDR: Quick reference guide
+
+
+Key Features:
+
+Map Creation: Build pixelated maps using a grid-based editor with symbols for walls, objects, enemies, and more.
+Symbol Placement: Select symbols from the toolbar and place them on the canvas. Use -- for select mode to edit properties.
+Properties Editing: Customize cell properties like color, texture, name, value, depth, height, and 3D effect.
+Arc Builder: Create story arcs with data for interactions, events, and narratives integrated with maps.
+Multi-Select: Drag to select regions for copy, cut, paste, replace, or clear operations.
+Undo/Redo: Support for map grid changes and arc edits.
+Preview: View map or dictionary previews.
+Import/Export: Load and save maps (.tmap), dictionaries (.mapd), and arcs (.arcs).
+
+Shortcuts:
+
+Tab: Cycle through focusable sections (symbols list, arcs list, arc fields, script generator, phrases, arc options, map canvas).
+Shift-Tab: Select next item in listboxes.
+Ctrl+Return: Simulate right-click on canvas at mouse position.
+W/A/S/D or Arrow Keys: Scroll canvas (up/left/down/right).
+Mouse Wheel: Vertical scroll.
+Shift + Mouse Wheel: Horizontal scroll.
+Page Up/Down: Page scroll vertically.
+Left Click (Canvas): Place symbol or start multi-select (in select mode).
+Right Click (Canvas): Remove symbol or select cell for properties.
+Lock Apply: Toggle to lock properties for repeated application on matching symbols.
+
+Tips:
+
+Use Lock Apply for batch property updates on specific symbols.
+Attach arcs to maps for integrated storytelling.
+Use Script Generator for quick insertion of enemy, boss, NPC, etc., data into arcs.
+Phrases panel for quick insertion of common arc data terms.
+Check Door Transversal Guide for connection rules between map sections.
+Refer to Arc Data Guide for advanced arc scripting options.
+
+!For detailed help, see map.help, arc.help, door.guide, and arc.guide!

@@ -1,0 +1,47 @@
+Door Transversal Guide (exit-from -> enter-to) [0 represents no door nor opening; 1 represents no-door opening; 2 represents a normal door; 3 represents a non-door transversal unit like a rope, hole or ladder; 4 represents a non-interactive door]:
+
+Opening -> Others::
+ 1--- -> --1- (left exit -> right entrance)
+ -1-- -> ---1 (top exit -> bottom entrance)
+ --1- -> 1--- (right exit -> left entrance)
+ ---1 -> -1-- (bottom exit -> top entrance)
+ 1--- -> --3- (left exit -> right entrance)
+ -1-- -> ---3 (top exit -> bottom entrance)
+ --1- -> 3--- (right exit -> left entrance)
+ ---1 -> -3-- (bottom exit -> top entrance)
+
+Door -> Others::
+ 2--- -> --1- (left exit -> right entrance)
+ -2-- -> ---1 (top exit -> bottom entrance)
+ --2- -> 1--- (right exit -> left entrance)
+ ---2 -> -1-- (bottom exit -> top entrance)
+ 2--- -> --2- (left exit -> right entrance)
+ -2-- -> ---2 (top exit -> bottom entrance)
+ --2- -> 2--- (right exit -> left entrance)
+ ---2 -> -2-- (bottom exit -> top entrance)
+
+Non-Door-Transversal-Unit -> Others::
+ 3--- -> --1- (left exit -> right entrance)
+ -3-- -> ---1 (top exit -> bottom entrance)
+ --3- -> 1--- (right exit -> left entrance)
+ ---3 -> -1-- (bottom exit -> top entrance)
+ 3--- -> --3- (left exit -> right entrance)
+ -3-- -> ---3 (top exit -> bottom entrance)
+ --3- -> 3--- (right exit -> left entrance)
+ ---3 -> -3-- (bottom exit -> top entrance)
+
+Non-Interactive Door -> Others::
+ 4--- -> --1- (left exit -> right entrance)
+ -4-- -> ---1 (top exit -> bottom entrance)
+ --4- -> 1--- (right exit -> left entrance)
+ ---4 -> -1-- (bottom exit -> top entrance)
+ 4--- -> --2- (left exit -> right entrance)
+ -4-- -> ---2 (top exit -> bottom entrance)
+ --4- -> 2--- (right exit -> left entrance)
+ ---4 -> -2-- (bottom exit -> top entrance)
+ 4--- -> --3- (left exit -> right entrance)
+ -4-- -> ---3 (top exit -> bottom entrance)
+ --4- -> 3--- (right exit -> left entrance)
+ ---4 -> -3-- (bottom exit -> top entrance)
+
+!If a transversal exit->entrance doesn't exist in this list, that transversal method/direction should not be allowed!

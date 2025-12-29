@@ -1,0 +1,55 @@
+Placeholder for Map Help
+
+Map Basics:
+    - New Map: Add tab with default 48x24 grid.
+    - Openings: 7-digit code (0-4) for edges (top-left to bottom-right clockwise + center); 0=none, 1=open, 2=door, 3=unit (rope/hole/ladder), 4=non-interactive door.
+    - Width/Height: Set dimensions (0-1080); apply to resize (preserves data, fills with space).
+    - Type: Safe, Crawl, Fight, Mix0, Mix1, Mix2, Mix3, Mixed.
+    - Name: Map title (max 28 characters).
+    - Maker: Creator name (max 21 characters).
+    - System: Auto-set to "PB [no-jam] PyEditor".
+
+Symbol Placement:
+    - Select Symbol: From list (e.g., ' '=Walk Space, '#'=Wall); place with left-click.
+    - Select Mode: Use -- to enter select mode for properties or multi-select.
+    - Right-Click: Remove symbol (set to space) or select cell.
+    - Multi-Select: Drag in select mode; apply edits to region.
+    - Lock Apply: Lock properties to auto-apply on matching symbols.
+
+Properties:
+    - Color: Text color (e.g., white, red).
+    - Texture: String for visual effect.
+    - Name: Custom name.
+    - Value: Integer (0+).
+    - Depth: Integer (1+).
+    - Height: Integer (1+).
+    - 3D Effect: Checkbox for depth simulation.
+    - Apply: Set to selected cell/region; clear specific or all via menu.
+
+Edit Operations:
+    - Copy/Cut/Paste: On selected region.
+    - Replace: Change symbols in region to current.
+    - Make New Map: Create tab from selected region.
+    - Generate New Section: Auto-generate extension (TODO).
+    - Clear Selected Properties: Reset props in region.
+    - Remove Selected: Clear symbols and props.
+    - Undo/Redo: For grid changes.
+
+Arcs Integration:
+    - Attached Arcs: Shown as green dots below grid; right-click dot to load arc.
+    - Load Arc to Map: Attach loaded arc.
+    - Save All from Map: Export attached arcs.
+
+File Operations:
+    - Save as .tmap: Single map with header, grid, footer, props, arcs.
+    - Save as .mapd: Dictionary with import header and loose arcs; exports maps as separate .tmap.
+    - Load .tmap/.txt: Single map.
+    - Load .mapd: Multiple maps via import, plus arcs.
+
+Door Connections:
+    - Use openings code and symbols (+=Door, -=Non-Interactive Door, L=Ladder, H=Hole, R=Rope).
+    - Follow Door Transversal Guide for valid exit->entrance patterns.
+
+!See symbols list in toolbar for all options!
+!Use door.guide for connection rules!
+!Integrate with arcs for dynamic events!

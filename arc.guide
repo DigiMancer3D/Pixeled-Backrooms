@@ -1,0 +1,143 @@
+The arc data is where builders really shine. This is when story arcs and other interactions may begin to occur where a map goes beyond to game.
+
+There are a number of options available through arc data. Next will be a list of available scripts:
+
+Key Bindings (may not be working):
+    - [key {action}] (set special keys for an arc or dictionary)
+    - {key [setting]} (set special settings toggle keys for an arc or dictionary)
+    - (key (action/setting)) (set special hold keys for an arc or dictionary)
+
+Map Intergration:
+    - $imported map# (a needed map for this arc, use the map import header for more)
+    - $generate map! (a needed map to be generated on the fly)
+
+Opning Arc:
+    - ***Starting Text or Entry Text*** (triggers at arc start and should be information or lore or both; use arrows to allow users to flip to next page for data longer then pop-up box and use book animation elements so the arrows flip the pages of the data)
+
+Non-Story Elements:
+    - 'monster name/type' (types of known or wanted monsters to spawn)
+    - ~object name/type~ (objects expected to drop)
+    - drop% (the percentage at which things drop based on what it follows. if follows: 'monster' drop% [how often these monsters drop objects], ~object~ drop% [how often these objects are dropped], drop% [follows nothing is a generic drop rate where you make drop twice as often as this generic drop rate for enemies or drop half as often as this generic drop rate for objects or timers are set to this rate based on estimated time for this arc])
+    - +spawn_rates (the percentage at which things spawn based on what it follows. if follows: 'monster' +spawn_rate [how often these monsters can spawn between each other], ~object~ +spawn_rates [how often these objects can spawn/drop/be-discovered between each other], +spawn_rates [follows nothing is a generic spawn rate where you spawn twice as often as this rate for enemies or spawn half as often as this rate for objects or timers are set to this rate based on estimated time for this arc])
+
+Interaction Systems:
+    - ^interactable event^ (allowed interactable events, if no interactable objects exists on map section trigger upon exit)
+    - *mandatory interactable event* (forced interactable events, if no interactable object exists on map section trigger upon entry)
+
+Location Systems:
+    - @{LOCATION} (XY location on map)
+    - @{__LOCATION__} (Generic phrase for selecting dynamic locations on map; "__RANDOM__", "__NEAR_WATER__", "__IN_WATER__", "__AWAY_FROM_WATER__", "__ON_LAND__")
+    - @{"SYMBOL"} (Generic pointer for selecting dynamic locations on the map by map symbol; "SYMBOL" == "X" i.e., if the location pointing to is the boss door ["X"], then the location would be @{"X"} since boss doors are shown as "X" symbol on the *.tmap text map file; quotation marks dictate verbatim map symbol)
+
+Story Arc:
+    - /User's Character Thoughts/ (text that represents the user's character thinking)
+    - \User's Character Speech\ (text that represents the user's character speaking)
+    - _Noticed actions descriptions_ (text that describes something that just happened or the user's character saw)
+    - -Non-Playable Character [NPC] Speech- (text that represents NPC or non-user-playable-character [NUPC] speaking)
+    - ->CHARACTER_NAME (pointer points to what character is being addressed and should appear after a thought, speech or action description within the pop-up; must appear after the thought, speech or action description in the arc data)
+
+Cause-&-Effect Systems:
+    - ANYTHING -> ANYTING (left points to right meaning when left happns do the right [normally used with interactable events but can be objects or monsters or loctions or any recgonized anything that can apper in the arc data])
+    - ANYTHING <- ANYTHING (right points to left meaning left cannot do actions until right happens [normally used with interactable events but can be objects or monsters or loctions or any recgonized anything that can apper in the arc data])
+
+Exit Arc:
+    - ***Goal Completion Text or Exit Text*** (appears when the goal is completed or if not a goal arc then triggers at the end of the arc)
+
+
+Data Phrases are unique phrases that are for specific notice to the system.
+
+  - "exit" (will be paried with a map or the type of zone but activates when user exits said map/zone type)
+
+  - "enter" (will be paried with a map or the type of zone but activates when the user loads in, wraps in, enters or first interacts with said map/zone type)
+
+  - "kill" (when a non-player enemy, mini-boss, boss is killed)
+
+  - "death" (when a non-player NPC is killed)
+
+  - "squash" (when a non-player user is killed)
+
+  - "XYZ" (when a player user is killed)
+
+  - "pick" (when a user picks up something or activates an enemy, mini-boss, boss)
+
+  - "acts" (when a user activates an enemy, mini-boss, boss by not touching them)
+
+  - "touch" (when anything before this touches anything after this, i.g., 'blue pixel' 30% +15 touch user ^mini-boss^ acts. [This example of the use of "touch" shows if a blue pixel enemy with a drop% +spawn_rate touches a user that should interact with the mini-boss with "acts" which should be as if something touched the mini-boss to activate it; this would generate a mini-boss if none existed at the time of play]. Touch can also have pointers to help direct i.g., 'blue pixel' 30% +15 touch -> user -> ^mini-boss^ acts. [Same example as before just with arrow pointer])
+
+  - "user" (any non-player user and active playing user)
+
+  - "jim" (any non-player user but not the active playing user)
+
+  - "sarah" (only the active playing user)
+
+  - "bob" (can be any of the following: NPCs, non-player user, active playing user)
+
+  - "obj" (non-weapon objects like items)
+
+  - "weap" (weapons)
+
+  - "armed" (armor)
+
+  - "arm" (human arm or limb)
+
+  - "speed" (increased speed)
+
+  - "faster" (increased attack speed)
+
+  - "slower" (decreased attack speed)
+
+  - "slow" (decreased speed)
+
+  - "glue" (locks creature/object in place for a limited amount of time)
+
+  - "hot" (burns creature/object for a limited amount of time)
+
+  - "cold" (frost damage to creature/object for a limited amount of time and slows creature/object more the longer the effect lasts)
+
+  - "froze" (ice damage to creature/object while locking creature/object in place for a limited amount of time, damage multiples the longer the effect lasts & can freeze other creature/objects)
+
+  - "flame" (fire damage to creature/object with burn damage and burn damage multiples over time the longer the effect lasts & can catch other objects/creatures on fire)
+
+  - "drop" (something is dropped on ground)
+
+  - "xplode" (corpse or live-enemy or object exploads)
+
+  - "burp" (user exploads)
+
+  - "burpee" (user gains fitness)
+
+  - "slothee" (user looses fitness)
+
+  - "plop" (user drops something)
+
+  - "wrap" (user enter wraps/portals or enters a map/zone without the use of a door or opening and didn't die)
+
+  - "parw" (user exit wraps/portals or exits a map/zone without the use of a door or opening and didn't die)
+
+  - "par" (completes goal within last 5 seconds)
+
+ Arc data is allowed to be setup in any form but must follow the data arc rules, which are as follows:
+    (1) Starting text must appear before zone information;
+
+    (2) Speech happens around elements in arc data array except monster & object listings;
+
+    (3) Event->object->text-element is the only way to get determined text from event based goals within the arc data that doesn't need a goal value;
+
+    (4) Completion text must appear after goal value;
+
+    (5) There can be up to 3 goal values per arc & it's data points. So this means per [goal value] set in the arc and arc data can have up to 3 characters separated by semi-colons ";".
+        - Goal values with single values (no semi-colons present) are showing which goals need to be done first.
+
+        - Goal values with only 2 values (1 semi-colon present) are showing repeating goals.
+
+        - Goal values with 3 values (2 semi-colons present) are showing goals that cannot be finished at once and are broken up into parts.
+
+            For example: crawler section arcs may have single goals to show in what order all is done; mix zones are common to have dual values to show which goal they start at then the second goal value shows how many times this goal can be repeated; boss and min-boss fights or mix zones with fights may use the triple method the most for goal values and triple goal values just show which goals this fight happens at allowing gaps between to show other arc data exists between sections and having sequential goal values to show non-separated sections of the fight but different sections for the boss (like evolution possible fights where the boss may upgrade when near dead to allow for sectional battles).
+
+
+            Arc goals can be used in any method the maker sees fit but these are examples of what each does:
+                - Single value to show position of goal;
+
+                - Double to show (A) starting goal value to start seeing this arc data point (B) number of times user may see this arc data point;
+
+                - Triple values to allow sectional goals that can be separated by other goals or have sequential numbers for complex scenes of any kind.
