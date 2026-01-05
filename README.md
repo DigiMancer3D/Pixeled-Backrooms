@@ -78,7 +78,7 @@ The Map Maker is a Python-based tool for designing maps and arcs for the Pixeled
    ```
 4. Run the Map Maker:
    ```
-   python pb.11a.py
+   python PB.13u.py
    ```
 
 No additional dependencies are required beyond the standard library and Tkinter.
