@@ -1,7 +1,5 @@
 # Pixeled Backrooms (PB) Project
 
-![Pixeled Backrooms Logo](https://placeholder.com/logo.png) <!-- Replace with actual logo if available -->
-
 ## Overview
 
 Pixeled Backrooms (PB) is an ambitious project aimed at creating a retro-style pixelated game inspired by backrooms lore. The project is divided into three main components:
