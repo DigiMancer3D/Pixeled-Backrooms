@@ -12,19 +12,19 @@ This README provides an overview of the project's progress across these componen
 
 ### Project Progress
 
-- **Pixel-Game Engine** (Progress: 40%):
+- **Pixel-Game Engine** (Progress: 0% [only-tested concept):
   - Basic rendering pipeline implemented using Pygame or similar libraries.
   - Support for pixelated graphics, entity movement, and basic collision detection.
   - Todo: Advanced features like AI pathfinding, lighting effects, and multiplayer integration.
   - Challenges: Optimizing for low-resolution pixel art while maintaining performance.
 
-- **Map & Arc Generator** (Progress: 30%):
+- **Map & Arc Generator** (Progress: 0% [had problems with inital testing):
   - Procedural generation algorithms for creating backrooms-style maps (e.g., maze-like structures with random rooms).
   - Arc generation for narrative elements, including events, enemies, and items.
   - Todo: Integration with the game engine, more varied generation rules, and user-customizable parameters.
   - Challenges: Ensuring generated content is balanced and engaging.
 
-- **Map Maker** (Progress: 80%):
+- **Map Maker** (Progress: 80% [working on bugs & mini-map]):
   - Fully functional GUI for creating and editing maps.
   - Supports symbol placement, property editing, arc building, and export options.
   - Detailed below in the dedicated section.
