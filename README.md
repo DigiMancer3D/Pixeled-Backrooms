@@ -1,132 +1,135 @@
 # Pixeled Backrooms (PB) Project
 
 ## Overview
+**Pixeled Backrooms (PB)** is a retro-style pixelated game project inspired by Backrooms lore. It is being developed in three interconnected components:
 
-Pixeled Backrooms (PB) is an ambitious project aimed at creating a retro-style pixelated game inspired by backrooms lore. The project is divided into three main components:
+1. **Pixel-Game Engine** — Core rendering, physics, AI, and gameplay systems.
+2. **Map & Arc Generator** — Procedural generation tools for levels and narrative arcs.
+3. **Map Maker** — A powerful graphical editor (the most mature component).
 
-1. **Pixel-Game Engine**: The core rendering and logic engine for handling game mechanics, physics, and interactions in a pixelated environment.
-2. **Map & Arc Generator**: A tool for generating maps and narrative arcs, including procedural generation of levels and story elements.
-3. **Map Maker**: A graphical editor for manually designing and editing maps, arcs, and properties, built using Python and Tkinter.
+The **Map Maker** (PB.17.py) is now fully functional and serves as the primary creative tool for designing maps, properties, and story arcs. The engine and generator remain in early conceptual stages.
 
-This README provides an overview of the project's progress across these components and a detailed guide to the Map Maker tool, which is the most developed part to date.
 
 ### Project Progress
+- **Pixel-Game Engine** (Progress: 0% — conceptual only)  
+  Basic rendering pipeline ideas tested. Have found issues with map-view switching, looking at new method of handling the visual-display for multiple forms. Future work includes entity movement, collision, lighting, and integration with exported maps/arcs.
 
-- **Pixel-Game Engine** (Progress: 0% [only-tested concept]):
-  - Basic rendering pipeline implemented using Pygame or similar libraries.
-  - Support for pixelated graphics, entity movement, and basic collision detection.
-  - Todo: Advanced features like AI pathfinding, lighting effects, and multiplayer integration.
-  - Challenges: Optimizing for low-resolution pixel art while maintaining performance.
+- **Map & Arc Generator** (Progress: 0% — early testing)  
+  Procedural algorithms planned but not yet implemented. Will eventually integrate with the Map Maker's output.
 
-- **Map & Arc Generator** (Progress: 0% [had problems with inital testing]):
-  - Procedural generation algorithms for creating backrooms-style maps (e.g., maze-like structures with random rooms).
-  - Arc generation for narrative elements, including events, enemies, and items.
-  - Todo: Integration with the game engine, more varied generation rules, and user-customizable parameters.
-  - Challenges: Ensuring generated content is balanced and engaging.
+- **Map Maker** (Progress: ~95% — stable and feature-rich)  
+  A complete Tkinter-based editor for manual map and arc creation. Includes grid editing, property management, arc scripting, minimap connectivity, blending, paint/tint tools, and multiple export formats.  
+  **Current version:** `PB.17.py`
 
-- **Map Maker** (Progress: 80% [working on bugs & mini-map]):
-  - Fully functional GUI for creating and editing maps.
-  - Supports symbol placement, property editing, arc building, and export options.
-  - Detailed below in the dedicated section.
-  - Challenges: Handling large maps efficiently and improving user interface responsiveness.
 
-The project is open-source and welcomes contributions. See the [Contributing](#contributing) section for details.
+## Map Maker (PB.17.py)
 
-## Map Maker for Pixeled Backrooms
+The **Map Maker** is a standalone Python tool for designing maps and narrative arcs for Pixeled Backrooms. It features a responsive GUI with advanced editing capabilities, export options, and quality-of-life tools.
 
-The Map Maker is a Python-based tool for designing maps and arcs for the Pixeled Backrooms game. It provides a user-friendly interface for placing symbols, editing properties, and managing narrative arcs. The tool is built with Tkinter and supports various export formats for integration with the game engine.
-
-### Features
-
-- **Map Editing**:
-  - Grid-based canvas for placing symbols (walls, doors, enemies, etc.).
-  - Multi-select, copy, cut, paste, and replace tools.
-  - Undo/redo support for edits.
-  - Zoom and scroll functionality.
-
-- **Property Editing**:
-  - Edit cell properties like name, color, texture, height, depth, value, 3D, range, and sun position.
-  - Lock apply feature for consistent properties across symbols.
-
-- **Arc Builder**:
-  - Create and edit narrative arcs with fields for name, estimated time, zone type, start/confirm messages, map, and data.
-  - Script generator for injecting common elements like enemies, bosses, NPCs.
-  - Data phrases for quick insertion of common terms.
-
-- **Export Options**:
-  - Export maps as .png with accompanying .txt for metadata.
-  - Export arcs as .csv.
-  - Full dictionary export as .zip containing maps and arcs.
-
-- **User Customization**:
-  - Text color themes.
-  - User name, tag, and UUID management.
-  - Epoch time display in menu bar.
-
-- **Safety and Validation**:
-  - Input validation for numerical fields.
-  - Cheating detection for invalid map interactions.
 
 ### Installation
 
-1. Ensure Python 3.12+ is installed.
-2. Install Tkinter if not present: `sudo apt update && sudo apt install python3-tk` (on Ubuntu/Debian).
-3. Clone the repository:
-   ```
-   git clone https://github.com/yourusername/pixeled-backrooms.git
-   cd pixeled-backrooms
-   ```
-4. Run the Map Maker:
-   ```
-   python PB.13u.py
-   ```
+**Requirements:**
+- Python 3.12+
+- Tkinter (usually included; on Ubuntu/Debian: `sudo apt update && sudo apt install python3-tk`)
+- Additional packages:
+  ```bash
+  pip install numpy pillow networkx
+  ```
+  
+Run the Map Maker:   
+ ```Bash
+ git clone https://github.com/yourusername/pixeled-backrooms.git
+ cd pixeled-backrooms
+ python PB.17.py
+ ```
+ 
+## Usage Quick Start
 
-No additional dependencies are required beyond the standard library and Tkinter.
+1. **Launch** → PB.17.py opens the main window.
+2. **Create/Edit Maps** → Use the left Symbols panel. Click to place, right-click to remove or inspect.
+3. **Properties** → Click a cell → edit in the right drawer (or use multi-select).
+4. **Arcs** → Create in the bottom panel, attach to current map via the Arcs list.
+5. **Mini-Map** → Open drawer to visualize and connect maps.
+6. **Export** → Use the File or Map menu (PNG, CSV, ZIP dictionary).
 
-### Usage
-
-1. **Launch the Tool**:
-   - Run the script to open the GUI.
-
-2. **Create a Map**:
-   - Use the Symbols list to select and place items on the canvas.
-   - Right-click to remove or select properties.
-   - Use multi-select for bulk operations.
-
-3. **Edit Properties**:
-   - Select a cell to view/edit properties in the right panel.
-   - Apply changes or lock for consistent application.
-
-4. **Build Arcs**:
-   - Use the Arcs list to create/edit arcs.
-   - Fill fields and use the script generator for quick input.
-
-5. **Export**:
-   - Use menu options to export maps, arcs, or the full dictionary.
-
-For detailed help, use the "Help" menu in the tool.
-
-### Screenshots
-
-![Map Editor Interface](https://placeholder.com/screenshot-map-editor.png)  
-*The main interface showing the map canvas, symbols, and properties.*
-
-![Arc Builder](https://placeholder.com/screenshot-arc-builder.png)  
-*The arc builder section for creating narrative elements.*
-
-### Contributing
-
-Contributions are welcome! Please follow these steps:
-1. Fork the repository.
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
-5. Open a Pull Request.
-
-### License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+###### Detailed help is available in the Help menu.
 
 ---
 
-For questions or issues, open an issue on GitHub or contact the maintainer. Happy mapping! 🚀
+### Key Features
+
+#### Map Editing
+- Grid-based canvas (resizable, up to 1080×1080 cells).
+- Rich symbol system (walls, doors, water, enemies, chests, teleporters, etc.).
+- **Multi-select** (up to 9 regions) with Shift-click support.
+- **Copy / Cut / Paste / Replace** operations.
+- **Undo / Redo** (per-map history, delta-based for efficiency).
+- Zoom slider + scroll/pan.
+- View modes (Side, Iso, Heli, Top).
+- **Paint Tool** — Apply background tints/colors with opacity and named color storage.
+- **Title Cards** — Toggleable floating name labels.
+- Sun rise/set placement and height-difference visualization (colored borders indicating jumpability/injury risk).
+
+#### Property System
+- Per-cell properties: name, color, texture, height, depth, value, 3D flag, range, earmark, title card, sun position.
+- **Lock Apply** mode for consistent property stamping.
+- **Mass editing** on multi-selected regions.
+- **Pin At / Pin To** system for map-to-map alignment.
+
+#### Arc Builder
+- Full arc creation and editing (name, estimated time picker, zone type, start/confirm messages, map reference, data field).
+- **Script Generator** — Quick forms for enemies, bosses, mini-bosses, NPCs, groups, map locations, and key bindings.
+- **Phrase injector** buttons for common events (exit, enter, kill, touch, etc.).
+- Undo/redo for arc fields.
+- Attach arcs to maps (visual dots on canvas).
+
+#### Mini-Map & Connectivity
+- Visual minimap showing all maps as nodes.
+- Drag-to-connect openings (7 possible per map: top, right, bottom, left, +3 internal).
+- Compatibility rules and colored connections (black/gold/green/red/blue).
+- Randomize connections option.
+- Click maps to switch tabs.
+
+#### Blending System
+- Sliders to blend adjacent maps (useful for stacked or connected levels).
+- Automatic alignment using **Pin At / Pin To** markers.
+
+#### User & Customization
+- New-user onboarding form (name, tag, text color theme).
+- Persistent user data (`PB.udata`) including UUID, colors, and named tints.
+- Text color themes (Classic, Ink, Rusty, etc.).
+- Epoch timestamp in menu bar.
+
+#### File Management & Export
+- Auto-organizes files into `map/`, `arc/`, `dict/`, `help/` folders.
+- **.tmap** — Single map (grid + metadata).
+- **.mapd** — Dictionary (multiple maps + arcs + connections).
+- **PNG export** — High-quality map images with footer (title, date code, arc count).
+- **CSV export** — Arcs (selected or all).
+- **Full Dictionary ZIP** — All maps (PNG + TXT) + arcs CSV.
+- Separated TXT export (grid symbols + header/footer).
+
+#### Help & Safety
+- In-app help viewer with guides (symbols, arcs, doors, minimap, full lists).
+- Input validation and length limits.
+- Right-click tooltips and info popups throughout the UI.
+
+---
+
+### Screenshots
+//<-- add screenshots here -->
+
+
+- Main editor with map canvas, symbols, and properties
+- Arc builder + script generator
+- Mini-map with connections
+- Paint tint drawer and blending sliders
+
+---
+
+### Happy mapping! 🚀
+
+###### For questions, open an issue on GitHub or reach out to the maintainers (@Z0M8I3D and contributors).
+
+###### Last updated: February 2026 — Map Maker v17 stable.
