@@ -1,5 +1,7 @@
 # Pixeled Backrooms (PB) Project
 
+![PB example screenshot](https://raw.githubusercontent.com/DigiMancer3D/Pixeled-Backrooms/refs/heads/main/pics/Screenshot_20260210_110255.png)
+
 ## Overview
 **Pixeled Backrooms (PB)** is a retro-style pixelated game project inspired by Backrooms lore. It is being developed in three interconnected components:
 
@@ -47,7 +49,7 @@ Run the Map Maker:
 ## Usage Quick Start
 
 1. **Launch** → PB.17.py opens the main window.
-2. **Create/Edit Maps** → Use the left Symbols panel. Click to place, right-click to remove or inspect.
+2. **Create & Edit Maps** → Use the left Symbols panel. Click to place, right-click to remove or inspect.
 3. **Properties** → Click a cell → edit in the right drawer (or use multi-select).
 4. **Arcs** → Create in the bottom panel, attach to current map via the Arcs list.
 5. **Mini-Map** → Open drawer to visualize and connect maps.
@@ -60,16 +62,17 @@ Run the Map Maker:
 ### Key Features
 
 #### Map Editing
-- Grid-based canvas (resizable, up to 1080×1080 cells).
-- Rich symbol system (walls, doors, water, enemies, chests, teleporters, etc.).
+- **Grid-based canvas** (resizable, up to 1080×1080 cells).
+- **Rich symbol system** (walls, doors, water, enemies, chests, teleporters, etc.).
 - **Multi-select** (up to 9 regions) with Shift-click support.
 - **Copy / Cut / Paste / Replace** operations.
 - **Undo / Redo** (per-map history, delta-based for efficiency).
-- Zoom slider + scroll/pan.
-- View modes (Side, Iso, Heli, Top).
-- **Paint Tool** — Apply background tints/colors with opacity and named color storage.
-- **Title Cards** — Toggleable floating name labels.
-- Sun rise/set placement and height-difference visualization (colored borders indicating jumpability/injury risk).
+- **Zoom slider** + scroll/pan.
+- **View modes** (Side, Iso, Heli, Top).
+- **Paint Tool** Apply background tints/colors with opacity and named color storage.
+- **Title Cards** Toggleable floating name labels.
+- **Sun rise/set**
+- **Placement and Height-difference visualization** (colored borders indicating jumpability/injury risk).
 
 #### Property System
 - Per-cell properties: name, color, texture, height, depth, value, 3D flag, range, earmark, title card, sun position.
@@ -78,53 +81,52 @@ Run the Map Maker:
 - **Pin At / Pin To** system for map-to-map alignment.
 
 #### Arc Builder
-- Full arc creation and editing (name, estimated time picker, zone type, start/confirm messages, map reference, data field).
-- **Script Generator** — Quick forms for enemies, bosses, mini-bosses, NPCs, groups, map locations, and key bindings.
-- **Phrase injector** buttons for common events (exit, enter, kill, touch, etc.).
-- Undo/redo for arc fields.
-- Attach arcs to maps (visual dots on canvas).
+- **Full arc creation & Editing** (name, estimated time picker, zone type, start/confirm messages, map reference, data field).
+- **Script Generator** Quick forms for enemies, bosses, mini-bosses, NPCs, groups, map locations, and key bindings.
+- **Phrase injector** Buttons for common events (exit, enter, kill, touch, etc.).
+- **Undo/Redo** for arc fields.
+- **Attach arcs to maps** (visual dots on canvas).
 
 #### Mini-Map & Connectivity
-- Visual minimap showing all maps as nodes.
-- Drag-to-connect openings (7 possible per map: top, right, bottom, left, +3 internal).
-- Compatibility rules and colored connections (black/gold/green/red/blue).
-- Randomize connections option.
-- Click maps to switch tabs.
+- **Visual minimap** showing all maps as nodes.
+- **Click-to-connect openings** (7 possible per map: top, right, bottom, left, +3 internal).
+- **Compatibility rules and colored connections** (black/gold/green/red/blue).
+- ***Randomize connections option.** (does not fully work)*
+- **Click maps to switch tabs.**
 
 #### Blending System
-- Sliders to blend adjacent maps (useful for stacked or connected levels).
-- Automatic alignment using **Pin At / Pin To** markers.
+- **Sliders to blend adjacent maps** (useful for stacked or connected levels).
+- **Automatic alignment using *Pin At / Pin To* markers.**
 
 #### User & Customization
-- New-user onboarding form (name, tag, text color theme).
-- Persistent user data (`PB.udata`) including UUID, colors, and named tints.
-- Text color themes (Classic, Ink, Rusty, etc.).
-- Epoch timestamp in menu bar.
+- **New-user onboarding form** (name, tag, text color theme).
+- **Persistent user data** (`PB.udata` including UUID, colors, and named tints).
+- **Text color themes** (Classic, Ink, Rusty, etc.).
+- **Epoch timestamp in menu bar.**
 
 #### File Management & Export
-- Auto-organizes files into `map/`, `arc/`, `dict/`, `help/` folders.
-- **.tmap** — Single map (grid + metadata).
-- **.mapd** — Dictionary (multiple maps + arcs + connections).
+- **Auto-organizes files** (`map/`, `arc/`, `dict/`, `help/` folders).
+- **.tmap** Single map (grid + metadata).
+- **.mapd** Dictionary (multiple maps + arcs + connections).
 - **PNG export** — High-quality map images with footer (title, date code, arc count).
 - **CSV export** — Arcs (selected or all).
 - **Full Dictionary ZIP** — All maps (PNG + TXT) + arcs CSV.
-- Separated TXT export (grid symbols + header/footer).
+- **Separated TXT export** (grid symbols + header/footer).
 
 #### Help & Safety
-- In-app help viewer with guides (symbols, arcs, doors, minimap, full lists).
-- Input validation and length limits.
-- Right-click tooltips and info popups throughout the UI.
+- **In-app help viewer with guides** (symbols, arcs, doors, minimap, full lists).
+- **Input validation and length limits.**
+- **Right-click tooltips and info popups throughout the UI.**
 
 ---
 
 ### Screenshots
-//<-- add screenshots here -->
+
+![PB TLDR-Display screenshot](https://raw.githubusercontent.com/DigiMancer3D/Pixeled-Backrooms/refs/heads/main/pics/Screenshot_20260210_110205.png)
 
 
-- Main editor with map canvas, symbols, and properties
-- Arc builder + script generator
-- Mini-map with connections
-- Paint tint drawer and blending sliders
+![PB Help-Display screenshot](https://raw.githubusercontent.com/DigiMancer3D/Pixeled-Backrooms/refs/heads/main/pics/Screenshot_20260210_110222.png)
+
 
 ---
 
