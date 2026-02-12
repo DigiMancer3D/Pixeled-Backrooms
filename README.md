@@ -61,6 +61,8 @@ Together they allow creators to design detailed levels manually while rapidly pr
 1. **Clone the repository**
    ```bash
    git clone https://github.com/DigiMancer3D/Pixeled-Backrooms.git
+   apt install python3
+   apt install python3-tk
    cd Pixeled-Backrooms
    ```
 2. **Install Dependencies**
