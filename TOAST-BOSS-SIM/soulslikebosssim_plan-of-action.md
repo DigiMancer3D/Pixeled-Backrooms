@@ -40,6 +40,13 @@
 ### Backrooms Creatures as Polygons for Game Representation
 Based on Backrooms lore from various wikis and communities, I'll detail key creatures, their descriptions, behaviors, and how to represent them as polygons in your boss simulator. Polygons are ideal for the game's style (simple verts/edges/fills). For bosses with sides % 3 == 0, they can mimic these (e.g., adjust color/verts to resemble), and summon minors as attacks (small polys with basic AI: pursue/player collision damage). Minors: 50% boss health/damage, 2-5 spawned, despawn after 30s or boss death.
 
+0. Stater (Entity 0)
+
+Description: A lonely sphere, about 3-5 times larger then the viewer of them. Dynamic but powerfull when they return. Poppable but they tend to come back stronger per time. Takes about 3 kills to prevent a reutrn for a while. Hunt by bounce and can feel your loneliness call to it like a beacon.
+Behavior in Game: Starts slow but ramps up speed after 1.3s, bounce toward player when the player isn't looking. Attack: Bounce (range) & Roll (medium) & quick Roll (short).
+Polygono Representation: Base: Standard round shpere with a shadow that slows the player. Glowing features: brightly colored particles falling like movement trails from the sphere. Color: red fill, pink outline for glow with particle effects falling off this outline. Minor summon: No minor, only self return 2-3 times stronger to test player at inital start.
+
+
 1. Smiler (Entity 3)
 
 Description: Pitch-black entities with glowing white smiles/eyes, aggressive in darkness. Hunt by sound/light, slash/bite.
