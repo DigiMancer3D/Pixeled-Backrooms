@@ -38,66 +38,67 @@
 # PreDetermined Bosses & Stuff
 
 ### Backrooms Creatures as Polygons for Game Representation
-Based on Backrooms lore from various wikis and communities, I'll detail key creatures, their descriptions, behaviors, and how to represent them as polygons in your boss simulator. Polygons are ideal for the game's style (simple verts/edges/fills). For bosses with sides % 3 == 0, they can mimic these (e.g., adjust color/verts to resemble), and summon minors as attacks (small polys with basic AI: pursue/player collision damage). Minors: 50% boss health/damage, 2-5 spawned, despawn after 30s or boss death.
+Bosses in the simulator are just +1 edged sided polygons that uses the user's level as a edge limitor for the polygons. For varity based on per 100 levels we use predetermined bosses. Based on Backrooms lore from various wikis and communities, I'll detail key creatures/bosses, their descriptions, behaviors, and how to represent them as polygons in the boss simulator. Polygons are ideal for the game's style (simple verts/edges/fills). For bosses with sides % 3 == 0, they can mimic these (e.g., adjust color/verts to resemble), and summon minors as attacks (small polys with basic AI: pursue/player collision damage). Minors: 50% boss health/damage, 2-5 spawned, despawn after 30s or boss death. For bosses with sides % 2 == 0, they can expload into smaller twin boss polygons. At half-health these polygon bosses may gain 1/4 extra health but in return expload into two smaller polygons that take that new amoung of halth and split it in half for each polygon in the twin polygons that exit out of the paricle blood of the boss that just explaoded. Boss explaosion causes player damage if player is near or on top of area at time of exploasion. 
 
-0. Stater (Entity 0)
+
+Stater (Entity 0)
 
 Description: A lonely sphere, about 3-5 times larger then the viewer of them. Dynamic but powerfull when they return. Poppable but they tend to come back stronger per time. Takes about 3 kills to prevent a reutrn for a while. Hunt by bounce and can feel your loneliness call to it like a beacon.
 Behavior in Game: Starts slow but ramps up speed after 1.3s, bounce toward player when the player isn't looking. Attack: Bounce (range) & Roll (medium) & quick Roll (short).
 Polygono Representation: Base: Standard round shpere with a shadow that slows the player. Glowing features: brightly colored particles falling like movement trails from the sphere. Color: red fill, pink outline for glow with particle effects falling off this outline. Minor summon: No minor, only self return 2-3 times stronger to test player at inital start.
 
 
-1. Smiler (Entity 3)
+Smiler (Entity 3)
 
 Description: Pitch-black entities with glowing white smiles/eyes, aggressive in darkness. Hunt by sound/light, slash/bite.
 Behavior in Game: Stealthy; invisible in low-light (alpha=0), appear when close. Attack: lunge (trail anim).
 Polygon Representation: Base: irregular decagon (10 verts) for shadowy blob. Glowing features: 2 triangles (eyes), curved pentagon (smile, approx arc). Color: black fill, white outline for glow. Minor summon: scale 0.5, spawn in dark areas.
 
-2. Hound (Entity 5)
-
-Description: Hairless, quadrupedal humanoids with sharp teeth/claws. Feral, charge/infect victims (turn into hounds).
-Behavior in Game: Fast pursuit; bite melee. If hit player 3x, temp "infect" (slow player 10s).
-Polygon Representation: Body: elongated octagon (8 verts). Legs: 4 triangles attached. Head: pentagon with spikes (triangles for teeth). Color: gray fill, red eyes (dots). Minor: scale 0.7, pack of 3.
-
-3. Partygoer (Entity 67)
-
-Description: Yellow, balloon-like humanoids with smiley faces. Lure with "fun," convert via cake. Group threats.
-Behavior in Game: Taunt (text popup "= )"), ranged "cake" proj (poison dot). Summon minors as "party."
-Polygon Representation: Round dodecagon (12 verts) for balloon. Face: circle approx (octagon), triangles for eyes/mouth. Color: yellow fill, black features. Minor: scale 0.6, bouncy anim (oscillate pos).
-
-4. Skin-Stealer (Entity 10)
-
-Description: Mimic humans by wearing skin. Ambush, pose as wanderers.
-Behavior in Game: Disguise as player poly (copy verts/color), reveal on attack. Melee slash.
-Polygon Representation: Humanoid hex (6 verts body), attached limbs (rects). "Skin": outer irregular poly layer (peeling anim: fade parts). Color: flesh pink, reveal dark under. Minor: scale 0.8.
-
-5. Deathmoth (Entity 4)
+Deathmoth (Entity 4)
 
 Description: Giant moths; males aggressive with acid spit, females passive/large.
 Behavior in Game: Fly (sin wave pos[1]), ranged spit (proj slow/poison).
 Polygon Representation: Wings: 2 large triangles. Body: cylinder approx (hex prism). Antennae: lines. Color: brown fill, glow eyes. Minor: scale 0.5, swarm.
 
-6. Clumps (Entity 50)
-Clumps are grotesque, fleshy masses of fused human limbs and torsos, often resembling tangled clusters of arms and legs. They're slow-moving but highly durable, found in moist or decaying levels like Level 5 down to level -50. They attack by grabbing and pulling victims into their mass, "assimilating" them. Survival: Use fire or explosives to break them apart; avoid close range.
-In the boss sim: Polygon as irregular 12-vert blob with protruding triangles (limbs). For summoning: Scale 0.6, slow pursuit AI, "grab" on collision (temp slow player).
+Hound (Entity 5)
 
-7. Dullers (Entity 66)
-Dullers are shadowy, humanoid figures with elongated limbs and no facial features, emitting a "dulling" aura that drains wanderers' energy and motivation. Common in monotonous levels like Level 66, they stalk silently and induce apathy, making escape harder. Attacks: Psychic drain (slow/weaken over time).
-In the boss sim: Polygon as tall hex prism (body) with stretched rect limbs. Black fill, no eyes. Summon: Scale 0.7, aura effect (reduce player speed if near).
+Description: Hairless, quadrupedal humanoids with sharp teeth/claws. Feral, charge/infect victims (turn into hounds).
+Behavior in Game: Fast pursuit; bite melee. If hit player 3x, temp "infect" (slow player 10s).
+Polygon Representation: Body: elongated octagon (8 verts). Legs: 4 triangles attached. Head: pentagon with spikes (triangles for teeth). Color: gray fill, red eyes (dots). Minor: scale 0.7, pack of 3.
 
-
-8. Jerry "JE" (Entity 17)
-Jerry aka "JE" is a unique, parrot-like entity that's semi-sentient and often friendly/neutral, mimicking speech and behaviors. Found in levels with colonies, it can be tamed with food but turns hostile if provoked. Attacks: Peck/swarm if angered. Look Mogs if not angered.
-In the boss sim: Polygon as bird-shaped (triangle body, lines for wings/beak). Blue fill, yellow eyes. Summon: Scale 0.5, fly AI (sin wave height), mimic player attacks.
-
-9. Facelings (Entity 9)
+Facelings (Entity 9)
 Facelings are humanoid entities with distorted, mask-like faces, ranging from child-like to adult forms. They mimic humans but are predatory, often ambushing in groups. In levels like Level 9, adults are hostile while juveniles can be neutral.
 In the boss sim: Polygon as humanoid octagon (body) with circle head, irregular verts for distorted face. Flesh tones. Summon: Scale 0.8, group rush AI.
 
+Skin-Stealer (Entity 10)
 
-10. Wretches (Entity 28)
+Description: Mimic humans by wearing skin. Ambush, pose as wanderers.
+Behavior in Game: Disguise as player poly (copy verts/color), reveal on attack. Melee slash.
+Polygon Representation: Humanoid hex (6 verts body), attached limbs (rects). "Skin": outer irregular poly layer (peeling anim: fade parts). Color: flesh pink, reveal dark under. Minor: scale 0.8.
+
+Jerry "JE" (Entity 17)
+Jerry aka "JE" is a unique, parrot-like entity that's semi-sentient and often friendly/neutral, mimicking speech and behaviors. Found in levels with colonies, it can be tamed with food but turns hostile if provoked. Attacks: Peck/swarm if angered. Look Mogs if not angered.
+In the boss sim: Polygon as bird-shaped (triangle body, lines for wings/beak). Blue fill, yellow eyes. Summon: Scale 0.5, fly AI (sin wave height), mimic player attacks.
+
+Wretches (Entity 28)
 Wretches are mutated former humans, twisted by almond water overuse or infection, with elongated limbs and erratic behavior. Found in unstable levels, they charge wildly and self-harm. Attacks: Frenzied melee, potential "infection" spread.
 In the boss sim: Polygon as stretched humanoid (long rect limbs, warped hex body). Red/purple fill. Summon: Scale 0.6, erratic movement (random dir changes).
+
+Clumps (Entity 50)
+Clumps are grotesque, fleshy masses of fused human limbs and torsos, often resembling tangled clusters of arms and legs. They're slow-moving but highly durable, found in moist or decaying levels like Level 5 down to level -50. They attack by grabbing and pulling victims into their mass, "assimilating" them. Survival: Use fire or explosives to break them apart; avoid close range.
+In the boss sim: Polygon as irregular 12-vert blob with protruding triangles (limbs). For summoning: Scale 0.6, slow pursuit AI, "grab" on collision (temp slow player).
+
+Dullers (Entity 66)
+Dullers are shadowy, humanoid figures with elongated limbs and no facial features, emitting a "dulling" aura that drains wanderers' energy and motivation. Common in monotonous levels like Level 66, they stalk silently and induce apathy, making escape harder. Attacks: Psychic drain (slow/weaken over time).
+In the boss sim: Polygon as tall hex prism (body) with stretched rect limbs. Black fill, no eyes. Summon: Scale 0.7, aura effect (reduce player speed if near).
+
+Partygoer (Entity 76)
+
+Description: Yellow, balloon-like humanoids with smiley faces. Lure with "fun," convert via cake. Group threats.
+Behavior in Game: Taunt (text popup "= )"), ranged "cake" proj (poison dot). Summon minors as "party."
+Polygon Representation: Round dodecagon (12 verts) for balloon. Face: circle approx (octagon), triangles for eyes/mouth. Color: yellow fill, black features. Minor: scale 0.6, bouncy anim (oscillate pos).
+
+
 
 
 ---
