@@ -3,13 +3,15 @@
 **A retro-style pixelated exploration game inspired by the Backrooms lore.**
 
 <br></br>
-Pixeled Backrooms is an open-world procedural horror/exploration project built around two powerful companion tools:
+Pixeled Backrooms is an open-world procedural horror/exploration project built around two powerful companion tools, an asset manager, game engine test bed (for players & development), & a soon to be game engine:
 
-- **PB (Pixeled Backrooms [Map Maker])**: A full-featured graphical editor for precise, hand-crafted maps and narrative arcs.
-- **JAM (Justified Auto Mapper)**: A live procedural world generator that creates vast, interconnected map networks on the fly. (*Still In-Progress*)
-- **TOST (Toatally Original System Too [Game Engine])**: The future pixel based game engine, play the things you built or generate on the fly. (*concept only thus far*)
+- **PB (Pixeled Backrooms [Map Maker])**: A full-featured graphical editor for precise, hand-crafted maps and narrative arcs. (*Mostly Complete **Testing Phase has begun***)
+- **JAM (Justified Auto Mapper [World Generator])**: A live procedural world generator that creates vast, interconnected map networks on the fly. (*Still In-Progress*)
+- **TOST (Tkinter Original Amalgamated System Terminal [Game Engine])**: The future pixel based game engine, play the things you built or generate on the fly. (*concept only thus far **Early Development Phase has begun***)
+- **ALT (Automated Loader Tester [Asset Manger])**: The asset manager for TOAST & bSIM (Toast Boss Simulator & Game Engine Development testing bed). Helps show your assets & files for the Pixeled Backrooms system wihtout showing all your computer's systems. Makes finding misstakes and files easy within the system directory.
+- **BSIM (Boss Simulator [Player & Development Test-Bed])**: The official testing program for both players to learn how TOAST game engine works and reacts while also allowing development for the game engine and file intergrations to be tested in a live enviroment.
 
-Together they allow creators to design detailed levels manually while rapidly prototyping and expanding entire worlds procedurally.
+Together they allow creators to design detailed levels manually while rapidly prototyping and expanding entire worlds procedurally and test in a live enviroment.
 
 <br></br>
 ![PB Map Maker Screenshot](https://raw.githubusercontent.com/DigiMancer3D/Pixeled-Backrooms/refs/heads/main/pics/Screenshot_20260210_110255.png)
