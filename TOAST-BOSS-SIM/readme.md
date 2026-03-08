@@ -72,7 +72,7 @@ Controls (bSIM_50.py):
 
 ## 📁 Project Structure
 ```
-TOAST-BOSS-SIM/              # Main Boss Simulator folder
+TOAST-BOSS-SIM/             # Main Boss Simulator folder
 ├── ALT.py                  # Automated Loader Tester (finished)
 ├── bSIM_50.py              # Boss Simulator (WIP)
 ├── Sprites/                # Sprite assets
