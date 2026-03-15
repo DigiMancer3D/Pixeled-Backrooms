@@ -1,168 +1,193 @@
-# 🍞 TOAST Boss Sim - Boss Simulator Engine
-> Part of the **Pixeled-Backrooms** project ecosystem
+# Pixeled Backrooms
 
-TOAST 🍞 is a **souls-like looped game-rounds real-time iso crawler boss simulator** game engine built with Python and Tkinter. TOST is made up of two key programs: 
-  - #### **Toast ALT** [Functional] (Automated Loader Tester, `ALT.py`) for asset management and browsing
-  - #### **Boss Sim** [Work-in-progress] (`bSIM_50.py`) for real-time combat simulation. 
+**A retro-style pixelated exploration game inspired by the Backrooms lore.**
 
-These tools will be used along with **PB** 🥜 (map maker), **JAM** 🫙 (world generator), and **GRILLS** 🔥 (animation sequencer) to create procedurally generated pixelated backroom experiences in due time.
+<br></br>
+Pixeled Backrooms is an open-world procedural horror/exploration project built around two powerful companion tools, an asset manager, game engine test bed (for players & development), a soon to be game engine, and an animation sequencer:
 
-## 📋 Project Overview
-This sub-repository under **Pixeled-Backrooms** contains:
-- **Toast ALT (`ALT.py`)**: A finished GUI tool for browsing, filtering, and managing project assets like sprites, maps, and scripts. It serves as a development aid for loading, testing, and organizing resources, with previews and metadata extraction.
-- **Boss Sim (`bSIM_50.py`)**: A work-in-progress simulator for boss fights in a backrooms-style arena. Features include player movement, inventory management, first-person view (FPV), skill trees, procedural generation, and interactive elements like safes and objects.
-- Integration with the broader ecosystem:
-  - Loads maps and data from PB (e.g., `.tmap`, `.mapd`) and JAM (e.g., `.arcs`).
-  - Supports custom sprites from `Sprites/Characters` and procedural enemy/mini-boss generation.
-  - Supports GIF animations from GRILLS for dynamic elements like character movements, effects, and boss behaviors.
-  - Shared asset directories for seamless resource sharing.
+- **PB (Pixeled Backrooms [Map Maker])**: A full-featured graphical editor for precise, hand-crafted maps and narrative arcs. (*Mostly Complete **Testing Phase has begun***)
+- **JAM (Justified Auto Mapper [World Generator])**: A live procedural world generator that creates vast, interconnected map networks on the fly. (*Still In-Progress*)
+- **TOST (Tkinter Original Amalgamated System Terminal [Game Engine])**: The future pixel based game engine, play the things you built or generate on the fly. (*concept only thus far **Early Development Phase has begun***)
+- **ALT (Automated Loader Tester [Asset Manger])**: The asset manager for TOAST & bSIM (Toast Boss Simulator & Game Engine Development testing bed). Helps show your assets & files for the Pixeled Backrooms system wihtout showing all your computer's systems. Makes finding misstakes and files easy within the system directory.
+- **BSIM (Boss Simulator [Player & Development Test-Bed])**: The official testing program for both players to learn how TOAST game engine works and reacts while also allowing development for the game engine and file intergrations to be tested in a live enviroment.
+- **GRILLS (General Real-time Integration Lateral Limited Sequencer [Animation Sequencer])**: A real-time animation sequencer and benchmark tool for creating, editing, and optimizing GIF animations and PNG sequences. Designed for campaign builders to prototype custom animations for integration with TOAST and other tools. (*Active Development*)
 
-## 🔧 Technical Details
-- **Language**: Python 3.x
-- **GUI Framework**: Tkinter (with Canvas for rendering in bSIM, Treeview for asset browsing in ALT)
-- **Key Features**:
-  - **Asset Management (ALT.py)**: Directory tree with filters (rarity, name, type, category, direction, loot category, extension, folder). PNG metadata parsing for game-specific fields. Image previews, related asset lists, context menus for opening files externally.
-  - **Game Simulation (bSIM_50.py)**: Procedural octagonal arena with obstacles, windows, safes, and interactives. Player controls with collision detection, camera smoothing, FPV mode with mouse locking. HUD with dynamic inventory drawers, hotbar, dragging mechanics, and group management.
-  - **Cross-Platform Support**: Mouse cursor warping and clipping for immersive controls (Windows/Linux).
-  - **Procedural Elements**: Random generation of arenas, safes (with traps/inventory), and interactives (e.g., nukes, keys, locked safes).
-  - **Save System**: JSON-based `.crumbs` files for player state, history, and map samples.
-- **Dependencies**: Standard Python libraries (os, tkinter, json, random, math, subprocess, webbrowser, collections, re, datetime, platform, ctypes, time). No external installs required beyond Tkinter. (Note: Integration with GRILLS may require Pillow for advanced animation handling.)
+Together they allow creators to design detailed levels manually while rapidly prototyping and expanding entire worlds procedurally, test in a live environment, and create dynamic animations for enhanced gameplay.
 
-## 📈 Integration Points
-### Internal System Integration
-- **Shared Asset Loading**: Both programs scan the `Sprites/` directory and subfolders (e.g., `enemies/`, `aimdot/`, `Characters/`) for PNG sprites. ALT.py provides metadata and previews, while bSIM_50.py loads them dynamically for game objects (e.g., items, aim dots, characters).
-- **File Type Handling**: Common support for custom formats like `.livemap` (live maps), `.tmap` (text-maps), `.mapd` (map dictionaries), `.arcs` (arc saves), and `.cumbs` (crumbs saves). ALT.py categorizes and describes them; bSIM_50.py uses them for saving/loading game states.
-- **Launcher Integration**: ALT.py includes buttons to launch related scripts (e.g., latest TOAST, PB, JAM) via subprocess, using pattern matching to find the most recent versions.
-- **Data Flow**: bSIM_50.py generates and saves game data (e.g., player coords, skills) to `.cumbs`, which can be browsed/analyzed in ALT.py. Procedural outputs from JAM/PB can be loaded into bSIM for testing.
+<br></br>
+![PB Map Maker Screenshot](https://raw.githubusercontent.com/DigiMancer3D/Pixeled-Backrooms/refs/heads/main/pics/Screenshot_20260210_110255.png)
+###### *PB Map Maker: Advanced grid editor with blending, view modes, and property system*
 
-### With PB (Map Maker)
-- Loads custom .tmap and .mapd files for arena layouts via dictionary parsing.
-- Uses cutmaps and dict files for generation assistance.
+<br></br>
+<!--![JAM World Mapper Screenshot](https://raw.githubusercontent.com/DigiMancer3D/Pixeled-Backrooms/main/screenshots/jam-worldmapper.png)
+*JAM: Live procedural map generation and connectivity tool*
 
-### With JAM (World Generator)
-- Imports procedural enemy pools and world data from .arcs and .guide files.
-- Supports .lore and .help files for in-game narrative, browsable in ALT.py.
-
-### With GRILLS (Animation Sequencer)
-- Loads GIF animations created and optimized in GRILLS for real-time use in boss simulations, including character animations, effects, and dynamic sprites.
-- Utilizes benchmarks from GRILLS to ensure animations meet TOAST's performance requirements for smooth integration.
-- Shares asset directories like `Sprites/animations/` for exporting and loading sequenced GIFs and PNGs.
-- Supports the C.L.E.R.E. workflow: Craft PNG layers, Load into GRILLS, Export as GIF, Reload and refine, then integrate into TOAST for testing.
-
-## 🚀 Getting Started
-### Requirements
-- Python 3.8+ (tested up to 3.12)
-- Tkinter (included with most Python installs; install via package manager if needed):
-  - **Ubuntu/Debian**: `sudo apt-get install python3-tk`
-  - **Fedora**: `sudo dnf install python3-tkinter`
-  - **Arch**: `sudo pacman -S tk`
-- For GRILLS integration: Pillow (`pip install pillow`)
-
-### Running
-- For asset browsing:  
-  ```bash
-  python3 ALT.py
-  ```
-  - Launches a Tkinter window with a file tree, filters, previews, and launch buttons.
-- For boss simulator (WIP):  
-  ```bash
-  python3 bSIM_50.py
-  ```
-  - Starts at title screen; select character and start game.
-
-Controls (bSIM_50.py):
-- WASD/Keys: Movement/menu actions
-- Mouse: Camera/Aim/Drag items
-- 1-9: Hotbar activation
-- Right-click: Context menus/Interact
-- ESC: Pause/Settings
-- Double right-click: Cancel selections
-
-## 📁 Project Structure
-```
-TOAST-BOSS-SIM/             # Main Boss Simulator folder
-├── ALT.py                  # Automated Loader Tester (finished)
-├── bSIM_50.py              # Boss Simulator (WIP)
-├── Sprites/                # Sprite assets
-│   ├── enemies/            # Enemy sprites
-│   ├── random-mini-boss/   # Mini-boss variants
-│   ├── boss/               # Boss sprites
-│   ├── miniboss/           # Mini-boss sprites
-│   ├── aimdot/             # Aim dot variants
-│   ├── unused/             # Unused/development sprites
-│   ├── old/                # Outdated sprites
-│   ├── Characters/         # Premade playable characters
-│   ├── animations/         # GIF and PNG animation sequences from GRILLS
-│   └── ...                 # UI/icons (bpack.png, equip.png, etc.)
-├── cutmaps/                # Map cutouts for generation
-├── dict/                   # Dictionary files (.mapd)
-├── myenv/                  # Python environment
-├── arc/                    # Arc storage
-├── help/                   # Help files
-├── RAWS/                   # Raw sprite data
-├── page/                   # Page data
-└── bSIM.crumbs             # Save data (auto-generated)
-```
-
-## 🔍 Program Details: ALT.py (Automated Loader Tester)
-### How It Works
-ALT.py is a standalone Tkinter application that scans the current directory and subfolders, building a treeview of files and folders with game-specific metadata. It focuses on PNG sprites, extracting fields like name, type, rarity, and category using custom parsing logic. Users can filter by various criteria, view image previews, descriptions, and related files. Context menus allow opening files externally, and buttons launch related scripts. After a splash screen, it displays the asset tree with dynamic updates on filter changes.
-
-- **Startup**: Scans directory for duplicates, related files, and unique filters (rarities, names, etc.).
-- **UI**: Treeview (left), preview/description/related list (right), filter bars (top).
-- **Interactivity**: Selection updates preview; double-click related jumps in tree; filters auto-refresh.
-- **Integration**: Launches TOAST/PB/JAM via pattern-matched file names; describes file types based on extensions.
-
-### Function Briefs
-- `get_png_fields(filename, dir_path)`: Extracts metadata (name, type, rarity, etc.) from PNG filenames using splitting logic.
-- `parse_png(filename, dir_path)`: Generates human-readable descriptions for PNG assets based on fields.
-- `insert_dir(parent, path, filters)`: Recursively builds treeview, applying filters and tags (duplicate, hidden, unknown).
-- `update_tree(event=None, force_open=False)`: Refreshes tree based on current filters, auto-opens if needed.
-- `on_select(event)`: Updates preview, description, and related list on item selection.
-- `show_menu(event, is_tree=True, iid=None, idx=None)`: Displays context menu for open/explore/view actions.
-- `find_latest_toast()` (and similar for PB/JAM): Uses regex patterns to find the latest version of related scripts.
-- `start_main()`: Hides splash after delay and initializes main UI.
-
-## 🔍 Program Details: bSIM_50.py (Boss Simulator)
-### How It Works
-bSIM_50.py is a full Tkinter Canvas-based game loop simulating boss combat in a procedural arena. It starts with a title screen for character selection (witch, necromancer, elemental, or custom PNG). In-game, it generates an octagonal arena with obstacles, windows, safes, and interactives. Player movement uses WASD or mouse-follow; FPV mode locks mouse for immersion. HUD includes dynamic loot rows (weapons/armor/usables/skills), inventory/safe drawers with dragging, hotbar, and groups. Menus (radial) handle actions like inspect, pin, inventory. Game state saves to `.crumbs`; procedural elements spawn during movement.
-
-- **Startup**: Loads sprites, initializes states, binds events.
-- **Game Loop (`game_update`)**: Handles movement, collisions, camera, spawning, UI updates every 30ms.
-- **Rendering (`draw`)**: Clears canvas, draws world/player/HUD/menus based on state.
-- **Interactivity**: Dragging items between HUD sections; radial menus for player/safe actions; key/hotbar activations.
-- **Integration**: Loads custom characters from `Sprites/Characters`; uses shared sprites for items/aimdots; saves integrate with PB/JAM formats.
-
-### Function Briefs
-- `__init__()`: Sets up Tkinter, loads sprites, initializes states/variables, binds events.
-- `generate_arena()`: Procedurally creates obstacles, windows, safes, world_safe, and interactives with random positions/inventories.
-- `start_new_game()`: Creates player dict, resets variables, generates arena, enables mouse lock.
-- `on_motion(event)`: Handles mouse hover, edge scrolling, FPV yaw/pitch, HUD hover detection.
-- `handle_hud_left_click(x, y)`: Processes clicks on hotbar, loot rows, drawers, groups.
-- `on_left_release(event)`: Handles item drops with auto-placement logic, returns to source if invalid.
-- `handle_menu_button(idx)`: Executes radial menu actions (follow/inspect/pin, FPV, inventory, etc.).
-- `draw_world()`: Renders arena, obstacles, windows, safes, interactives (FPV or top-down).
-- `draw_hud()`: Draws dynamic loot rows, drawers (inventory/safe), hotbar, groups, dragging items.
-- `game_update()`: Main loop for updates (movement, collisions, spawning, stamina, drawing).
-
-## 📝 Save Data
-- `bSIM.crumbs`: JSON with header (player ID/coords/data), map samples, details, history (scores/kills/levels/timestamps).
-
-- ###### ALT.py uses no persistent save but dynamically scans files.
-
-## 🎯 Vibecoded (VBCD)
-This project was VBCD (vibecoded) because the creator primarily uses JS, not Python. I (DigiMancer3D) wanted a fast way to prototype a game engine by describing ideas to Grok, while learning Python through editing VBCD outputs. Resources like w3schools.com and other VBCD Python projects have been invaluable for understanding syntax and structure.
-
-## 📖 Related Documentation
-For the full Pixeled-Backrooms ecosystem:
-- [PB Repository](https://github.com/DigiMancer3D/Pixeled-Backrooms) - Map creation tools
-- [JAM Documentation](https://github.com/DigiMancer3D/Pixeled-Backrooms/tree/main/JAM) - World generation
-- [GRILLS Documentation](https://github.com/DigiMancer3D/Pixeled-Backrooms/tree/main/GRILLS) - Animation sequencing tools
-
-## 🙏 Credits
-Created by DigiMancer3D as part of the Pixeled-Backrooms project.  
-Coded with assistance from Grok.
+*(Replace the image links above with actual screenshots once uploaded to the repo)*-->
 
 ---
-**Status**: Active Development (ALT.py complete; bSIM_50.py WIP)  
-*TOAST: The engine that's crisp, fresh, and ready to battle bosses! 🍞*
+
+<br></br>
+## Features
+
+<br></br>
+### PB Map Maker (Manual Editing)
+- Grid-based canvas (up to 1080×1080 cells) with zoom, pan, and multi-select
+- Rich symbol system (walls, doors, enemies, objects, water, etc.)
+- Per-cell properties: name, color, texture, height, depth, value, 3D, range, earmarks, title cards
+- **New in latest update**:
+  - Multiple view modes: Side (Z=Z), Isometric (Y=Z), Helicopter (XY=Z), Top-down (XYZ=Z)
+  - Enhanced height-difference visualization using flood-fill for cleaner borders
+  - Improved map blending with automatic pin-based alignment
+  - Paint tool for background tints with named color storage
+  - Performance optimizations (image caching)
+- Arc Builder with scripting phrases, AI sequences, and map attachment
+- Mini-map connectivity editor (7 opening slots, compatibility rules)
+- Export: PNG, separated .txt, full dictionary ZIP, CSV
+
+<br></br>
+### JAM (Procedural Generation)
+- Seed-based world generation
+- Dynamic map expansion and connectivity
+- Live canvas with panning/zooming
+- Integration with PB maps and arcs
+- Export generated worlds for use in the game engine
+
+<br></br>
+### GRILLS (Animation Sequencing)
+- Dual-panel interface for GIF (left) and PNG sequences (right)
+- Real-time playback with speed control (0.01-13.0), reverse, overlap, and loops
+- Layering in Robin Mode with gaps, alignments (Center/Bottom/Top/Right/Left), and extra layers
+- Blending options: opacity (0-1), scale (0.01-4x), offsets, rotation, locking
+- Adjustments: color boosts, hue (brightness/temp/tint), saturation (tints, reductions, concentration)
+- Benchmarking: FPS, render time, memory usage (PIL/resized), CPU/RAM to ensure TOAST compatibility
+- Export as GIF (with durations/loops) or PNG sequences to `Sprites/animations/`
+- Integration with TOAST for testing animations in the game engine
+- Follows C.L.E.R.E. workflow: Craft PNG layers, Load into GRILLS, Export as GIF, Reload and refine, Export final
+
+<br></br>
+### Shared Features
+- Persistent user data and themes
+- Comprehensive in-app help system
+- Robust undo/redo, copy/paste, and safety checks
+
+<br></br>
+## Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/DigiMancer3D/Pixeled-Backrooms.git
+   apt install python3
+   apt install python3-tk
+   cd Pixeled-Backrooms
+   ```
+2. **Install Dependencies**
+   ```bash
+   pip install numpy pillow networkx
+   ```
+###### &nbsp;&nbsp;(Tkinter is usually included with Python. On Linux you may need sudo apt install python3-tk)
+
+<br></br>
+### Run the tools
+- PB Map Maker: python PB.py
+- JAM World Mapper: python JAM.D.1b.py
+- GRILLS Animation Sequencer: python GRILLS/GRILLS.py
+
+<br></br>
+## Using PB
+
+<br></br>
+### Quick Start
+- Using PB Map Maker
+
+<br></br>
+### Launch PB.py
+- Create or load a map
+- Use the symbol list to place objects
+- Edit properties in the right drawer
+- Build narrative arcs in the bottom panel
+- Connect maps using the Mini-Map tool
+- Export as PNG or dictionary for JAM/engine use
+
+<br></br>
+## Using JAM
+
+<br></br>
+### Launch JAM.D.1b.py
+- Generate a new world or load existing maps
+- Adjust parameters and expand the world
+- Export the generated structure back to PB format
+
+<br></br>
+## Using GRILLS
+
+<br></br>
+### Launch GRILLS.py
+- Load GIF on left or PNG sequence on right
+- Edit playback: speed, reverse, overlap, loops
+- Use Robin Mode for layering with gaps and alignments
+- Adjust blending: opacity, scale, offsets, rotation
+- Apply color/hue/saturation changes
+- Benchmark performance for TOAST integration
+- Export as GIF or PNG sequence
+
+<br></br>
+### Help & Documentation
+#### Detailed guides are included in the /help folder:
+
+- **map.help** Map editing basics
+- **arc.help / arc.guide** Arc scripting and narrative
+- **door.guide** Openings and connectivity
+- **Mmap.guide** Mini-map and connections
+- *Symbol, phrase, and data lists (full and quick-reference versions)*
+
+###### Press the Help menu in PB for in-app access.
+
+<br></br>
+## Screenshots
+
+<br></br>
+### PB Map Maker
+
+
+![PB screenshot](https://raw.githubusercontent.com/DigiMancer3D/Pixeled-Backrooms/refs/heads/main/pics/Screenshot_20260210_110205.png)
+###### *Help System Built In*
+
+<br></br>
+![PB screenshot](https://raw.githubusercontent.com/DigiMancer3D/Pixeled-Backrooms/refs/heads/main/pics/Screenshot_20260210_110222.png)
+###### *More then one help file to read from*
+
+
+<br></br>
+![PB screenshot](https://raw.githubusercontent.com/DigiMancer3D/Pixeled-Backrooms/refs/heads/main/pics/Screenshot_20260210_110255.png)
+###### *Edit your map with full options at your mouse click*
+
+<br></br>
+
+Arc Builder --add these screenshots--
+Blending Example --add these screenshots--
+
+<br></br>
+### JAM World Mapper
+
+JAM Main Interface --add these screenshots--
+Generated World --add these screenshots--
+
+<br></br>
+### GRILLS Animation Sequencer
+
+GRILLS Main Interface --add these screenshots--
+Animation Benchmark Example --add these screenshots--
+Layered Animation Preview --add these screenshots--
+
+<br></br>
+## Credits
+- Design & Development: 3Douglas [@DigiMancer3D aka @Z0M8I3D](https://x.com/z0m8i3d)
+- VibeCodeD assistance from [@Grok and xAI](https://grok.com)
+
+
+## License
+### This project is open-source. See LICENSE for details (or contact the author for specific usage rights).
+
+###### Made with passion for the Backrooms aesthetic and procedural creativity.
+<br></br>
+<br></br>
