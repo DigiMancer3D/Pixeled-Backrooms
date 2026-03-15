@@ -5,7 +5,7 @@ TOAST 🍞 is a **souls-like looped game-rounds real-time iso crawler boss simul
   - #### **Toast ALT** [Functional] (Automated Loader Tester, `ALT.py`) for asset management and browsing
   - #### **Boss Sim** [Work-in-progress] (`bSIM_50.py`) for real-time combat simulation. 
 
-These tools will be used along with **PB** 🥜 (map maker) and **JAM** 🫙 (world generator) to create procedurally generated pixelated backroom experiences in due time.
+These tools will be used along with **PB** 🥜 (map maker), **JAM** 🫙 (world generator), and **GRILLS** 🔥 (animation sequencer) to create procedurally generated pixelated backroom experiences in due time.
 
 ## 📋 Project Overview
 This sub-repository under **Pixeled-Backrooms** contains:
@@ -14,6 +14,7 @@ This sub-repository under **Pixeled-Backrooms** contains:
 - Integration with the broader ecosystem:
   - Loads maps and data from PB (e.g., `.tmap`, `.mapd`) and JAM (e.g., `.arcs`).
   - Supports custom sprites from `Sprites/Characters` and procedural enemy/mini-boss generation.
+  - Supports GIF animations from GRILLS for dynamic elements like character movements, effects, and boss behaviors.
   - Shared asset directories for seamless resource sharing.
 
 ## 🔧 Technical Details
@@ -25,7 +26,7 @@ This sub-repository under **Pixeled-Backrooms** contains:
   - **Cross-Platform Support**: Mouse cursor warping and clipping for immersive controls (Windows/Linux).
   - **Procedural Elements**: Random generation of arenas, safes (with traps/inventory), and interactives (e.g., nukes, keys, locked safes).
   - **Save System**: JSON-based `.crumbs` files for player state, history, and map samples.
-- **Dependencies**: Standard Python libraries (os, tkinter, json, random, math, subprocess, webbrowser, collections, re, datetime, platform, ctypes, time). No external installs required beyond Tkinter.
+- **Dependencies**: Standard Python libraries (os, tkinter, json, random, math, subprocess, webbrowser, collections, re, datetime, platform, ctypes, time). No external installs required beyond Tkinter. (Note: Integration with GRILLS may require Pillow for advanced animation handling.)
 
 ## 📈 Integration Points
 ### Internal System Integration
@@ -42,6 +43,12 @@ This sub-repository under **Pixeled-Backrooms** contains:
 - Imports procedural enemy pools and world data from .arcs and .guide files.
 - Supports .lore and .help files for in-game narrative, browsable in ALT.py.
 
+### With GRILLS (Animation Sequencer)
+- Loads GIF animations created and optimized in GRILLS for real-time use in boss simulations, including character animations, effects, and dynamic sprites.
+- Utilizes benchmarks from GRILLS to ensure animations meet TOAST's performance requirements for smooth integration.
+- Shares asset directories like `Sprites/animations/` for exporting and loading sequenced GIFs and PNGs.
+- Supports the C.L.E.R.E. workflow: Craft PNG layers, Load into GRILLS, Export as GIF, Reload and refine, then integrate into TOAST for testing.
+
 ## 🚀 Getting Started
 ### Requirements
 - Python 3.8+ (tested up to 3.12)
@@ -49,6 +56,7 @@ This sub-repository under **Pixeled-Backrooms** contains:
   - **Ubuntu/Debian**: `sudo apt-get install python3-tk`
   - **Fedora**: `sudo dnf install python3-tkinter`
   - **Arch**: `sudo pacman -S tk`
+- For GRILLS integration: Pillow (`pip install pillow`)
 
 ### Running
 - For asset browsing:  
@@ -84,6 +92,7 @@ TOAST-BOSS-SIM/             # Main Boss Simulator folder
 │   ├── unused/             # Unused/development sprites
 │   ├── old/                # Outdated sprites
 │   ├── Characters/         # Premade playable characters
+│   ├── animations/         # GIF and PNG animation sequences from GRILLS
 │   └── ...                 # UI/icons (bpack.png, equip.png, etc.)
 ├── cutmaps/                # Map cutouts for generation
 ├── dict/                   # Dictionary files (.mapd)
@@ -148,6 +157,7 @@ This project was VBCD (vibecoded) because the creator primarily uses JS, not Pyt
 For the full Pixeled-Backrooms ecosystem:
 - [PB Repository](https://github.com/DigiMancer3D/Pixeled-Backrooms) - Map creation tools
 - [JAM Documentation](https://github.com/DigiMancer3D/Pixeled-Backrooms/tree/main/JAM) - World generation
+- [GRILLS Documentation](https://github.com/DigiMancer3D/Pixeled-Backrooms/tree/main/GRILLS) - Animation sequencing tools
 
 ## 🙏 Credits
 Created by DigiMancer3D as part of the Pixeled-Backrooms project.  
@@ -156,4 +166,3 @@ Coded with assistance from Grok.
 ---
 **Status**: Active Development (ALT.py complete; bSIM_50.py WIP)  
 *TOAST: The engine that's crisp, fresh, and ready to battle bosses! 🍞*
-
