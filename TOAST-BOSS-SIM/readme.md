@@ -150,15 +150,6 @@ bSIM_50.py is a full Tkinter Canvas-based game loop simulating boss combat in a 
 
 - ###### ALT.py uses no persistent save but dynamically scans files.
 
-## 🎯 Vibecoded (VBCD)
-This project was VBCD (vibecoded) because the creator primarily uses JS, not Python. I (DigiMancer3D) wanted a fast way to prototype a game engine by describing ideas to Grok, while learning Python through editing VBCD outputs. Resources like w3schools.com and other VBCD Python projects have been invaluable for understanding syntax and structure.
-
-## 📖 Related Documentation
-For the full Pixeled-Backrooms ecosystem:
-- [PB Repository](https://github.com/DigiMancer3D/Pixeled-Backrooms) - Map creation tools
-- [JAM Documentation](https://github.com/DigiMancer3D/Pixeled-Backrooms/tree/main/JAM) - World generation
-- [GRILLS Documentation](https://github.com/DigiMancer3D/Pixeled-Backrooms/tree/main/GRILLS) - Animation sequencing tools
-
 ## Sprites
 There are some sprites data that are preloaded and each sprite has default sizings (check png.guide in /help/ for full sprite sizing list).
 
@@ -185,6 +176,15 @@ Some sprites come already installed or pre-made & ready for use.
 - **Safe(s)**: 3 Pre-Loaded Touchable Safes (Including the world safe)
 - **Inventory & Safe Tab Icons**: 4 Pre-Loaded Inventory & Safe Tab Icons
 - **BackPack & Equip Icons**: 3 Pre-Loaded BPack & Equip Icons
+
+## 📖 Related Documentation
+For the full Pixeled-Backrooms ecosystem:
+- [PB Repository](https://github.com/DigiMancer3D/Pixeled-Backrooms) - Map creation tools
+- [JAM Documentation](https://github.com/DigiMancer3D/Pixeled-Backrooms/tree/main/JAM) - World generation
+- [GRILLS Documentation](https://github.com/DigiMancer3D/Pixeled-Backrooms/tree/main/GRILLS) - Animation sequencing tools
+
+## 🎯 Vibecoded (VBCD)
+This project was VBCD (vibecoded) because the creator primarily uses JS, not Python. I (DigiMancer3D) wanted a fast way to prototype a game engine by describing ideas to Grok, while learning Python through editing VBCD outputs. Resources like w3schools.com and other VBCD Python projects have been invaluable for understanding syntax and structure.
 
 ## 🙏 Credits
 Created by DigiMancer3D as part of the Pixeled-Backrooms project.  
