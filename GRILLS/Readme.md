@@ -81,9 +81,9 @@ GRILLS prototypes animations in-real-time for smooth integration to your choice 
 2. **Edit**: +/- speed (hold), Reverse, Overlap +/-, Loop +/-. Pause: canvas click.  
 3. **Determine**: View banchmark data FPS/mem during play to detemine best play points.  
 4. **Loop**: Toggle for layers; adjust count/gap/align. Add extras. Reorder: << / <- / -> / >>.  
-5. **Edit**: Target (Initial/Robin/Stack), opacity/size +/-, lock. Color/Hue/Sat with ● options. Long-press tabs for position/rotate/align/lock popup.  
+5. **Edit**: Target (Initial/Robin/Stack), opacity/size +/-, lock. Color/Hue/Sat with ● options. Long-press tabs for position/rotate/align/lock holding pop-in options.  
 6. **Export**: Button; name, .gif/.png to Sprites/animations/.  
-7. **Control**: Double-left: reload; double-right: cancel. Long-click: properties. Resize window scales.  
+7. **Control**: single-left: play/pause; Double-left: reload; double-right: cancel. Long-click: properties. Resize window scales.  
 
 <br></br>
 
