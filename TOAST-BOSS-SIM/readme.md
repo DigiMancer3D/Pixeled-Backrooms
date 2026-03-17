@@ -159,6 +159,33 @@ For the full Pixeled-Backrooms ecosystem:
 - [JAM Documentation](https://github.com/DigiMancer3D/Pixeled-Backrooms/tree/main/JAM) - World generation
 - [GRILLS Documentation](https://github.com/DigiMancer3D/Pixeled-Backrooms/tree/main/GRILLS) - Animation sequencing tools
 
+## Sprites
+There are some sprites data that are preloaded and each sprite has default sizings (check png.guide in /help/ for full sprite sizing list).
+
+### Defaults
+All sprites are allowed a range between 1-1042 pixels but some have predetermined defaults that work within the bounds of the UI.
+- **Splash Screen**: 1200x930
+- **DIY Character**: 128x128
+- **Interactive Objects**: 256x256
+- **Directional Arrows**: 48x48
+- **Tabbed-Loot-Array Row Identifiers**: 64x64
+- **Inventory & Safe Tab Icons**: 42x42
+- **BackPack & Equip Icons**: 42x42
+- **Usables/Findables**: 128x128 
+- **AimDot**: 68x68
+
+### Pre-Loaded
+Some sprites come already installed or pre-made & ready for use.
+- **AimDot**: 238 Pre-Loaded AimDots [avg 19.83~ per category [12] || avg 19.75 per material [8]]
+- **Characters**: 13 Pre-Loaded [DIY] Characters [avg 2 varients per character]
+- **Random-Mini-Boss**: 1 Pre-Loaded RMB 
+- **Usables/Findables**: 37 Pre-Loaded Usables/Findables
+- **Directional Arrows**: 13 Pre-Loaded DArrows
+- **Tabbed-Loot-Array Row Identifiers**: 6 Pre-Loaded TLA Row IDs [1 unused swappable option]
+- **Safe(s)**: 3 Pre-Loaded Touchable Safes (Including the world safe)
+- **Inventory & Safe Tab Icons**: 4 Pre-Loaded Inventory & Safe Tab Icons
+- **BackPack & Equip Icons**: 3 Pre-Loaded BPack & Equip Icons
+
 ## 🙏 Credits
 Created by DigiMancer3D as part of the Pixeled-Backrooms project.  
 Coded with assistance from Grok.
