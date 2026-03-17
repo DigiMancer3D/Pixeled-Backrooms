@@ -3,14 +3,14 @@
 
 TOAST 🍞 is a **souls-like looped game-rounds real-time iso crawler boss simulator** game engine built with Python and Tkinter. TOST is made up of two key programs: 
   - #### **Toast ALT** [Functional] (Automated Loader Tester, `ALT.py`) for asset management and browsing
-  - #### **Boss Sim** [Work-in-progress] (`bSIM_50.py`) for real-time simulations. 
+  - #### **Boss Sim** [Work-in-progress] (`bSIM_068d.py`) for real-time simulations. 
 
 These tools will be used along with **PB** 🥜 (map maker), **JAM** 🫙 (world generator), and **GRILLS** 🔥 (animation sequencer) to create procedurally generated pixelated backroom experiences in due time.
 
 ## 📋 Project Overview
 This sub-repository under **Pixeled-Backrooms** contains:
 - **Toast ALT (`ALT.py`)**: A finished GUI tool for browsing, filtering, and managing project assets like sprites, maps, and scripts. It serves as a development aid for loading, testing, and organizing resources, with previews and metadata extraction.
-- **Boss Sim (`bSIM_50.py`)**: A work-in-progress simulator for boss fights in a backrooms-style arena. Features include player movement, inventory management, first-person view (FPV), skill trees, procedural generation, and interactive elements like safes and objects.
+- **Boss Sim (`bSIM_068d.py`)**: A work-in-progress simulator for boss fights in a backrooms-style arena. Features include player movement, inventory management, first-person view (FPV), skill trees, procedural generation, and interactive elements like safes and objects.
 - Integration with the broader ecosystem:
   - Loads maps and data from PB (e.g., `.tmap`, `.mapd`) and JAM (e.g., `.arcs`).
   - Supports custom sprites from `Sprites/Characters` and procedural enemy/mini-boss generation.
@@ -22,7 +22,7 @@ This sub-repository under **Pixeled-Backrooms** contains:
 - **GUI Framework**: Tkinter (with Canvas for rendering in bSIM, Treeview for asset browsing in ALT)
 - **Key Features**:
   - **Asset Management (ALT.py)**: Directory tree with filters (rarity, name, type, category, direction, loot category, extension, folder). PNG metadata parsing for game-specific fields. Image previews, related asset lists, context menus for opening files externally.
-  - **Game Simulation (bSIM_50.py)**: Procedural octagonal arena with obstacles, windows, safes, and interactives. Player controls with collision detection, camera smoothing, FPV mode with mouse locking. HUD with dynamic inventory drawers, hotbar, dragging mechanics, and group management.
+  - **Game Simulation (bSIM_068d.py)**: Procedural octagonal arena with obstacles, windows, safes, and interactives. Player controls with collision detection, camera smoothing, FPV mode with mouse locking. HUD with dynamic inventory drawers, hotbar, dragging mechanics, and group management.
   - **Cross-Platform Support**: Mouse cursor warping and clipping for immersive controls (Windows/Linux).
   - **Procedural Elements**: Random generation of arenas, safes (with traps/inventory), and interactives (e.g., nukes, keys, locked safes).
   - **Save System**: JSON-based `.crumbs` files for player state, history, and map samples.
@@ -30,10 +30,10 @@ This sub-repository under **Pixeled-Backrooms** contains:
 
 ## 📈 Integration Points
 ### Internal System Integration
-- **Shared Asset Loading**: Both programs scan the `Sprites/` directory and subfolders (e.g., `enemies/`, `aimdot/`, `Characters/`) for PNG sprites. ALT.py provides metadata and previews, while bSIM_50.py loads them dynamically for game objects (e.g., items, aim dots, characters).
-- **File Type Handling**: Common support for custom formats like `.livemap` (live maps), `.tmap` (text-maps), `.mapd` (map dictionaries), `.arcs` (arc saves), and `.cumbs` (crumbs saves). ALT.py categorizes and describes them; bSIM_50.py uses them for saving/loading game states.
+- **Shared Asset Loading**: Both programs scan the `Sprites/` directory and subfolders (e.g., `enemies/`, `aimdot/`, `Characters/`) for PNG sprites. ALT.py provides metadata and previews, while bSIM_068d.py loads them dynamically for game objects (e.g., items, aim dots, characters).
+- **File Type Handling**: Common support for custom formats like `.livemap` (live maps), `.tmap` (text-maps), `.mapd` (map dictionaries), `.arcs` (arc saves), and `.cumbs` (crumbs saves). ALT.py categorizes and describes them; bSIM_068d.py uses them for saving/loading game states.
 - **Launcher Integration**: ALT.py includes buttons to launch related scripts (e.g., latest TOAST, PB, JAM) via subprocess, using pattern matching to find the most recent versions.
-- **Data Flow**: bSIM_50.py generates and saves game data (e.g., player coords, skills) to `.cumbs`, which can be browsed/analyzed in ALT.py. Procedural outputs from JAM/PB can be loaded into bSIM for testing.
+- **Data Flow**: bSIM_068d.py generates and saves game data (e.g., player coords, skills) to `.cumbs`, which can be browsed/analyzed in ALT.py. Procedural outputs from JAM/PB can be loaded into bSIM for testing.
 
 ### With PB (Map Maker)
 - Loads custom .tmap and .mapd files for arena layouts via dictionary parsing.
@@ -191,5 +191,5 @@ Created by DigiMancer3D as part of the Pixeled-Backrooms project.
 Coded with assistance from Grok.
 
 ---
-**Status**: Active Development (ALT.py complete; bSIM_50.py WIP)  
+**Status**: Active Development (ALT.py complete; bSIM_068d.py WIP)  
 *TOAST: The engine that's crisp, fresh, and ready to battle bosses! 🍞*
