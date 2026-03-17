@@ -3,7 +3,7 @@
 
 TOAST 🍞 is a **souls-like looped game-rounds real-time iso crawler boss simulator** game engine built with Python and Tkinter. TOST is made up of two key programs: 
   - #### **Toast ALT** [Functional] (Automated Loader Tester, `ALT.py`) for asset management and browsing
-  - #### **Boss Sim** [Work-in-progress] (`bSIM_50.py`) for real-time combat simulation. 
+  - #### **Boss Sim** [Work-in-progress] (`bSIM_50.py`) for real-time simulations. 
 
 These tools will be used along with **PB** 🥜 (map maker), **JAM** 🫙 (world generator), and **GRILLS** 🔥 (animation sequencer) to create procedurally generated pixelated backroom experiences in due time.
 
