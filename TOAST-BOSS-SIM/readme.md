@@ -66,7 +66,7 @@ This sub-repository under **Pixeled-Backrooms** contains:
   - Launches a Tkinter window with a file tree, filters, previews, and launch buttons.
 - For boss simulator (WIP):  
   ```bash
-  python3 bSIM_50.py
+  python3 bSIM_068d.py
   ```
   - Starts at title screen; select character and start game.
 
@@ -82,7 +82,7 @@ Controls (bSIM_50.py):
 ```
 TOAST-BOSS-SIM/             # Main Boss Simulator folder
 ├── ALT.py                  # Automated Loader Tester (finished)
-├── bSIM_50.py              # Boss Simulator (WIP)
+├── bSIM_068d.py              # Boss Simulator (WIP)
 ├── Sprites/                # Sprite assets
 │   ├── enemies/            # Enemy sprites
 │   ├── random-mini-boss/   # Mini-boss variants
@@ -125,7 +125,7 @@ ALT.py is a standalone Tkinter application that scans the current directory and 
 
 ## 🔍 Program Details: bSIM_50.py (Boss Simulator)
 ### How It Works
-bSIM_50.py is a full Tkinter Canvas-based game loop simulating boss combat in a procedural arena. It starts with a title screen for character selection (witch, necromancer, elemental, or custom PNG). In-game, it generates an octagonal arena with obstacles, windows, safes, and interactives. Player movement uses WASD or mouse-follow; FPV mode locks mouse for immersion. HUD includes dynamic loot rows (weapons/armor/usables/skills), inventory/safe drawers with dragging, hotbar, and groups. Menus (radial) handle actions like inspect, pin, inventory. Game state saves to `.crumbs`; procedural elements spawn during movement.
+bSIM_068d.py is a full Tkinter Canvas-based game loop simulating boss combat in a procedural arena. It starts with a title screen for character selection (witch, necromancer, elemental, or custom PNG). In-game, it generates an octagonal arena with obstacles, windows, safes, and interactives. Player movement uses WASD or mouse-follow; FPV mode locks mouse for immersion. HUD includes dynamic loot rows (weapons/armor/usables/skills), inventory/safe drawers with dragging, hotbar, and groups. Menus (radial) handle actions like inspect, pin, inventory. Game state saves to `.crumbs`; procedural elements spawn during movement.
 
 - **Startup**: Loads sprites, initializes states, binds events.
 - **Game Loop (`game_update`)**: Handles movement, collisions, camera, spawning, UI updates every 30ms.
