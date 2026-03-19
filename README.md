@@ -90,7 +90,7 @@ Together they allow creators to design detailed levels manually while rapidly pr
 ### Run the tools
 - PB Map Maker: python PB.py
 - JAM World Mapper: python JAM.D.1b.py
-- GRILLS Animation Sequencer: python GRILLS/GRILLS.py
+- GRILLS Animation Sequencer: python TOAST-BOSS-SIM/GRILL/GRILLS.py
 
 <br></br>
 ## Using PB
