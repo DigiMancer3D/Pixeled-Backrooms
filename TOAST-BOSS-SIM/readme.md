@@ -4,18 +4,18 @@
 TOAST 🍞 is a **souls-like looped game-rounds real-time iso crawler boss simulator** game engine built with Python and Tkinter. The full ecosystem now includes four key programs:
 
 - #### **Toast ALT** [Functional] (`ALT.py`) — Asset management and browsing
-- #### **Boss Sim** [Work-in-progress] (`bSIM_068d.py`) — Real-time boss simulations
-- #### **TAS** [Functional] (`tas.py`) — Tkinter Audio Synth for procedural sound design
-- #### **Toast ALT** also doubles as the launcher for everything else.
+- #### **Boss Sim** [Work-in-progress] (`bSIM_068d.py`) — Real-time engine simulations
+- #### **TAS** [Functional] (`tas.py`) — Tkinter Audio Synth for designing your own sound
+- #### **Toast ALT** The alternative extra program launcher.
 
 These tools work together with **PB** 🥜 (map maker), **JAM** 🫙 (world generator), and **GRILLS** 🔥 (animation sequencer) to create procedurally generated pixelated backroom experiences complete with custom audio.
 
 ## 📋 Project Overview
 This sub-repository under **Pixeled-Backrooms** contains:
 
-- **Toast ALT (`ALT.py`)**: Finished GUI tool for browsing, filtering, and managing sprites, maps, and scripts with previews and metadata.
-- **Boss Sim (`bSIM_068d.py`)**: Work-in-progress real-time boss fight simulator with player controls, procedural arenas, inventory, and FPV mode.
-- **TAS (`tas.py`)**: Full-featured procedural audio synthesizer. Features multi-layer waveform generation (sine, square, saw, triangle, noise), EQ controls, modifiers (vibrato, shimmer, distortion, noise gate), live Wave Sequencing, and Bit Sequencing for rhythmic patterns. Exports to `.wav`, `.ago` (custom preset format), and ready-to-run Python code.
+- **Toast ALT (`ALT.py`)**: GUI tool for browsing, filtering, and managing sprites, maps, and scripts with previews and metadata with limited hardrive scope to relate only to the directory it sits within and around it.
+- **Boss Sim (`bSIM_068d.py`)**: [Work-In-Progress] Real-time engine simulator with player controls, procedural arenas, inventory, and FPV mode.
+- **TAS (`tas.py`)**: Toast-formed procedural audio synthesizer. Features multi-layer waveform generation (sine, square, saw, triangle, noise), EQ controls, modifiers (vibrato, shimmer, distortion, noise gate), live Wave Sequencing, and Bit Sequencing for rhythmic patterns. Exports to `.wav`, `.ago` (custom preset format), and ready-to-run Python code.
 - Seamless integration across the ecosystem for complete game development (maps, worlds, animations, **and now audio**).
 
 ## 🔧 Technical Details
@@ -34,7 +34,7 @@ This sub-repository under **Pixeled-Backrooms** contains:
 - Export `.wav` files for direct import into bSIM or GRILLS.
 - `.ago` presets and `.py` code exports allow reusable sound designs and direct embedding into game scripts.
 - ALT.py can browse and preview `.ago` / `.wav` files created by TAS.
-- Future roadmap: bSIM will dynamically load TAS-generated audio for real-time boss music and procedural soundscapes.
+- ***Future roadmap:* bSIM will dynamically load TAS-generated audio for real-time boss music and procedural soundscapes.**
 
 ### Internal System Integration
 - **Shared Asset Loading**: All tools scan the `Sprites/` directory. ALT provides metadata/previews, TAS loads waveforms for synthesis, bSIM uses sprites + audio.
