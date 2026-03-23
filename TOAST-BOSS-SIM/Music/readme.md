@@ -3,6 +3,6 @@
 ### These are music files that initiall come with the TOAST Engine.
 
 
-### Simply by changing the mp3/wav files within this folder to customize your radio tracks.
+### Simply change the mp3/wav files within this folder to customize your radio tracks.
 
 
