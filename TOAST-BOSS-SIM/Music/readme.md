@@ -1,8 +1,8 @@
-## TOAST can handle .mp3 & .wav format audio files for the music player system aka "Radio Speaker system in the Backrooms".
+## TOAST can handle .mp3, .ogg & .wav format audio files for the music player system aka "Radio Speaker system in the Backrooms".
 
 ### These are music files that initiall come with the TOAST Engine.
 
 
-### Simply change the mp3/wav files within this folder to customize your radio tracks.
+### Simply change the mp3/ogg/wav files within this folder to customize your radio tracks.
 
 
