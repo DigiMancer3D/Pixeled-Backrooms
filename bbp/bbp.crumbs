@@ -1,0 +1,10 @@
+Bug sides::bug_sides:8
+Bug R::bug_r:0
+Bug G::bug_g:170
+Bug B::bug_b:0
+Bug A::bug_a:255
+Bug size::bug_size:18
+Emoji size::emoji_size:22
+Selected emojis::selected_emojis:🪳,🕷️,🪰
+Boss PNG path::boss_overlay_path:
+Bug color::bug_color:#00aa00
