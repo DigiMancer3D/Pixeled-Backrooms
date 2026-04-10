@@ -178,6 +178,7 @@ Weighted random selection when multiple toggles are on. Bomb explodes on smash (
 - Emoji directional facing uses atan2 offset but does not yet use the per-emoji corner index for different “front” corners (default top-left only).
 - Double-click smash on single-bug cluster had a safeguard but can still edge-case on size 1.
 - `load_crumbs()` attempts 3 times to read `bbp.crumbs` (::key:value format) but does not perfrom this in a series where the data (plain text::key:value) is attempted to load in the following manner: (check 1) key === varaiable, value === varaiable_value; (check 2) plain text (spaces removed) === variable, value === variable_value; (check 3) plain text (spaces removed) === variable, key === variable_value.
+- bbp.crumbs file saves too often. The bbp.crumbs file should only save after the user has had the bug or emoji editor menu(s) up upon closing either menu. Closing emoji editor should save only changed emoji data, closing bug editor should save only changed bug data.
 
  <br></br> 
 ###### This is a prototype program to determine TOAST-BOSS-SIM (bosssim aka bSIM) eventual boss and bug AI mechanics.
